@@ -1,1 +1,1 @@
-# Lab-1-Study---Room-Booking-System-SBRS-Paper-Prototype
+The Study-Room Booking System (SRBS) improves room reservations by providing real-time availability, booking confirmation, and automated updates to reduce double-booking, no-shows, and cancellations. Currently, rooms are often wasted due to lack of accountability, with data showing only 50% of bookings are completed and 7 hours lost. The new system ensures students confirm bookings, tracks usage data, and improves efficiency while maintaining security through user authentication and controlled access.
