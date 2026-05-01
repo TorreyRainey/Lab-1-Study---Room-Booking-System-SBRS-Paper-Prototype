@@ -1,0 +1,140 @@
+Lab 1: Study-Room Booking System (SRBS)
+Paper Prototype
+Dataset:
+booking_id room status booked_hours created_day
+B01 R1 COMPLETED 2 Mon
+B02 R1 NO_SHOW 2 Mon
+B03 R2 CANCELLED 1 Tue
+B04 R3 COMPLETED 2 Tue
+B05 R2 COMPLETED 3 Wed
+B06 R1 NO_SHOW 1 Wed
+B07 R3 COMPLETED 2 Thu
+B08 R2 NO_SHOW 2 Thu
+B09 R1 COMPLETED 1 Fri
+B10 R3 CANCELLED 1 Fri
+• Step 1 — Problem (1 sentence)
+Study rooms get double-booked, cancellations waste rooms, and students don’t see
+real-time availability.
+• Step 1 – Answer
+Study rooms are being double booked because students do not have room check in times.
+And students are cancelling at the last minute, so rooms are being wasted. And a proper
+system is not in place to see the availability of the rooms and the times the students are
+checking in and out.
+• Step 2 — System goal (2 sentences)
+Write what the system does: booking + rules + reminders + reporting.
+• Step 2 — System goal ASNWER (2 sentences)
+The system allows students to book rooms, and it allows the Data Analyst to see how
+frequently rooms are being used. And it allows students to the availability of the rooms.
+• Step 3 — ANSWER IS roles (choose 3)
+• Librarians
+• Students
+• IT Support
+• Step 4 — ANSWER 4 components table
+People/Tech/Process/Data.
+People: Students, Librarians, IT Support, Data Analyst
+Technology: Database, Booking website, Notifications
+Process: Looking for availability, booking, access/denied, using the rooms
+Data: student ID, days, hours of rooms being used, the time slots for students
+Step 5 — ASNWER As-Is process (6 steps)
+How do students currently reserve rooms?
+1. Check for a room
+2. Request for booking
+3. Staff checks for availability to accept or decline
+4. Students booking is recorded
+5. No show for students
+6. Rooms not being used
+• Step 6 — ANSWER To-Be process with 2 decisions
+Include decisions like:
+o “Room available?”
+o “User confirmed within 2 hours?”
+1. Student selects room
+2. Student selects a time
+3. Student waits to get confirmed for a room
+4. Student gets approved for a room
+5. Student receives a notification
+6. Booking Status gets updated (Staff can see & other students)
+Decision 1: Room Available?
+If no > choose another time/ or room > end.
+If yes > select a time
+Decision 2: “Did user confirm within 2 hours?”
+If no > Booking is cancelled.
+If yes > student booking is updated within the status
+• Step 7 — Data table design
+Create RoomBookings with 10 fields.
+1. Student_id
+2. Room
+3. Booking_id
+4. Booking_date
+5. Start_time
+6. End_time
+7. Booked_hours
+8. Status
+o Completed
+o Cancelled
+o No Show
+9. Created_day
+10. Confirmation_ status
+• Step 8 — Use this dataset and compute DIK
+Dataset:
+booking_id room status booked_hours created_day
+B01 R1 COMPLETED 2 Mon
+B02 R1 NO_SHOW 2 Mon
+B03 R2 CANCELLED 1 Tue
+booking_id room status booked_hours created_day
+B04 R3 COMPLETED 2 Tue
+B05 R2 COMPLETED 3 Wed
+B06 R1 NO_SHOW 1 Wed
+B07 R3 COMPLETED 2 Thu
+B08 R2 NO_SHOW 2 Thu
+B09 R1 COMPLETED 1 Fri
+B10 R3 CANCELLED 1 Fri
+Compute:
+• Which room has the most NO_SHOW?
+NO_SHOW rooms:
+• B02 (R1)
+• B06 (R1)
+• B08 (R2)
+NO_SHOW couts:
+• R1: 3
+• R2: 2
+Room 1 has the most no shows.
+• Total booked_hours that were wasted (NO_SHOW + CANCELLED)
+WASTED ROOMS:
+• NO SHOWS: Rooms
+o B02 (R1) > 2 counts
+o B06 (R1) > 1 count
+o B08 (R2) > 2 counts
+2 + 1 + 2 = 5 hours
+• CANCELED ROOMS:
+o B03 (R2) > 1 count
+o B10 (R3) . 1 count
+1 + 1 = 2 hours
+A total of 7 hours wasted.
+• % of bookings completed (COMPLETED / total)
+COMPLETED:
+B01 + B04 + B05 + B07 + B09 = 5 Completed
+TOTAL:
+2 hours, 2 hours, 3 hours, 2 hours, 1 hours, = 10 Total
+5/10 = 0.5 = 50% is completed
+Then Write:
+• 1 sentence Information
+INFORMATION: Half of the bookings are completed. And R1 has the most no shows.
+• 1 sentence Knowledge/action (policy or system improvement)
+KNOWELDGE: Need more updating bookings and can get rid of R1.
+• Step 9 — Information quality ANSWER (Timeliness/Accuracy/Completeness)
+Each: 1 risk + 1 fix.
+Timeliness:
+1 Risk – Availability not updating after time slot is over
+1 Fix – real time updates
+Accuracy:
+1 Risk – Wrong room and wrong time
+1 Fix – automatic check in
+Completeness:
+1 Risk – not providing reason for no show
+1 Fix – proving reason for no show
+• Step 10 — ANSWER Ethics/Security
+2 risks + protections.
+1 Risk – Unauthorized booking
+- Only allowing users to book
+Risk 2 – someone can see or change data
+Protection – log in information and permission for students to grant access
